@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Results</title>
+		<meta name="theme-color" content="#75222c">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/app.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+	</head>
+	<body>
+		
+		<header>
+			<div id="logo">
+				<h1>Cinemaflix</h1>
+				<h3>Your next movie search starts here</h3>
+			</div>
+		</header>
+	
+		<div class="container" id="searchInfo">
+			<a href="/">Back  to search</a>	
+			<h2>Search results for: <span id="queryInfo">"<%= queryInfo %>"</span></h2>
+		</div>
+	
+		<div class="container">
+		    <div class="container-results">
+		    <% data["Search"].forEach(function(movie){ %>
+				<div class="card">
+					<div class="thumbnail">
+					    <% var image = movie["Poster"] %>
+					    <% if (movie["Poster"] == "N/A") {  %>
+					    <% image = "assets/images/noposter.png";%>
+					    <% }  %>
+						<img src="<%= image %>">
+					</div>
+					<div class="info">
+						<div class="title"><%= movie["Title"]  %></div>
+						<div class="other"><p><%= movie["Type"] %> &middot; <%= movie["Year"]%></p><span class="imdb"><a href="http://www.imdb.com/title/<%= movie["imdbID"]%>/" target="_blank">IMDb</a></span></div>
+					</div>
+				</div>
+		     <% }) %>
+			</div>
+		</div>
+		
+		<footer>
+	  		<div><p>Powered by OMDb API</p></div>
+			<p>Made with <i class="fa fa-heart" aria-hidden="true"></i> by Nikola Antić <span>&middot;</span></p>
+			<p><a href="#"><i class="fa fa-github" aria-hidden="true"></i> GitHub </a><span>&middot;</span></p>
+	  		<p><a href="#">About</a></p>
+	   	</footer>
+	</body>
+</html>

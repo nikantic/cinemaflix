@@ -1,0 +1,17 @@
+{
+  "name": "movie-search-app",
+  "version": "1.0.0",
+  "description": "A movie search app using omdb api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Nikola Antic",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "request": "^2.81.0"
+  }
+}

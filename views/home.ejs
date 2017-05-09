@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#75222c">
+		<link rel="stylesheet" type="text/css" href="css/app.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+	</head>
+	
+	<body>
+		
+		<header>
+			<div id="logo">
+				<h1>Cinemaflix</h1>
+				<h3>Your next movie search starts here</h3>
+			</div>
+		</header>
+	
+		<div class="container">
+			<div id="searchForm">
+				<form action="/results" method="GET">
+					<div class="cellTable">
+						<input type="text" name="search" placeholder="Enter movie title here" required>
+						<p>(e.g. The Great Gatsby, The Lord of The Rings...)</p>
+					</div>
+					<div class="cellTable" id="searchButton">
+						<input class="normal" type="submit" value="Search">
+					</div>
+				</form>
+			</div>
+		</div>
+			
+		<footer>
+	  		<div><p>Powered by OMDb API</p></div>
+			<p>Made with <i class="fa fa-heart" aria-hidden="true"></i> by Nikola Antić <span>&middot;</span></p>
+			<p><a href="#"><i class="fa fa-github" aria-hidden="true"></i> GitHub </a><span>&middot;</span></p>
+	  		<p><a href="#">About</a></p>
+	   	</footer>
+			
+	</body>
+</html>	
