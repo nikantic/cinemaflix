@@ -12,7 +12,7 @@ The idea was to build a nice looking web application to search for movies, show 
 - Express
 - EJS
 - Request - Node package to make http calls
-- OMDb API (JSON format) - The Open Movie Database API provides data from IMDB and RottenTomatoes
+- OMDb API (JSON) - The Open Movie Database API provides data from IMDB and RottenTomatoes
 - HTML
 - CSS
 - JavaScript
