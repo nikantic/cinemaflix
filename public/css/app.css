@@ -213,6 +213,55 @@ footer > p {
     text-transform: capitalize;
 }
 
+.container404 {
+    text-align: center;
+    margin-top: 10% !important;
+    margin-bottom: 65px;
+}
+
+.container404 > h1 {
+    font-size: 60px;
+    color: rgb(226, 54, 54);
+    font-family: Raleway;
+    margin-bottom: 0px;
+}
+
+.container404 > h3 {
+    color: #5f5f5f;
+    font-weight: 600;
+    padding-top: 0px;
+    margin-top: 10px;
+}
+
+.container404 > p {
+    color: #696969;
+    font-weight: 600;
+    margin-bottom: 30px;
+    margin-top: 25px;
+}
+
+.container404 > a {
+    background-color: #fff;
+    white-space: nowrap;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 2px 0 rgba(0,0,0,0.12), 0 2px 1px -2px rgba(0,0,0,0.2);
+    color: #232323;
+    padding: 13px;
+    line-height: 32px;
+    transition: box-shadow 0.2s linear;
+}
+
+.container404 > a:hover {
+    box-shadow: 0 4px 23px 0 rgba(0,0,0,0.14), 0 5px 7px 0 rgba(0,0,0,0.12), 0 4px 1px -1px rgba(0,0,0,0.2);
+}
+
+.container404 > a:focus {
+    outline: none;
+}
+
 #searchForm {
     margin-bottom: 50px;
     border-radius: 5px;
@@ -317,11 +366,11 @@ footer > p {
 }
 
 @media(max-width: 678px) {
-    h1 {
+    #logo > h1 {
         font-size:2.5em !important;
     }
     
-    h3 {
+    #logo > h3 {
         font-size: 20px !important;
     }
     
