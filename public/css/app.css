@@ -10,7 +10,6 @@ html {
 
 body {
 	margin: 0;
-	color: white;
 	font-size: 14px;
     line-height: 1.42857143;
 	font-family: Segoe UI, Roboto, "Helvetica Neue", Ubuntu, Arial, sans-serif;
@@ -146,12 +145,9 @@ footer > p {
 .container-results {
     text-align: center;
     background: #ffffff;
-    /*background: rgba(16, 16, 16, 0.79);*/
     padding: 20px;
     border-radius: 5px;
-    min-height: 800px;
     margin: 0px auto 30px auto;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -262,6 +258,18 @@ footer > p {
     outline: none;
 }
 
+.noResultsFound > h1 {
+    color: #3c3c3c;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.noResultsFound > h3 {
+    color: #5f5f5f;
+    font-size: 18px;
+    font-weight: 400;
+}
+
 #searchForm {
     margin-bottom: 50px;
     border-radius: 5px;
@@ -277,7 +285,7 @@ footer > p {
 
 #searchInfo > h2 {
     color: #424242;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 #searchInfo a {

@@ -25,21 +25,28 @@
 	
 		<div class="container">
 		    <div class="container-results">
-		    <% data["Search"].forEach(function(movie){ %>
-				<div class="card">
-					<div class="thumbnail">
-					    <% var image = movie["Poster"] %>
-					    <% if (movie["Poster"] == "N/A") {  %>
-					    <% image = "assets/images/noposter.png";%>
-					    <% }  %>
-						<img src="<%= image %>">
+		    <% if (data["Response"] === "False" ) { %>
+		    <div class="noResultsFound">
+		    	<h1><i class="fa fa-exclamation-circle"></i> No Results Found</h1>
+		    	<h3> <%= data["Error"] %></h3>
+		    </div>
+		    <% } else { %>
+			    <% data["Search"].forEach(function(movie){ %>
+					<div class="card">
+						<div class="thumbnail">
+						    <% var image = movie["Poster"] %>
+						    <% if (movie["Poster"] == "N/A") {  %>
+						    <% image = "assets/images/noposter.png";%>
+						    <% }  %>
+							<img src="<%= image %>">
+						</div>
+						<div class="info">
+							<div class="title"><%= movie["Title"]  %></div>
+							<div class="other"><p><%= movie["Type"] %> &middot; <%= movie["Year"]%></p><span class="imdb"><a href="http://www.imdb.com/title/<%= movie["imdbID"]%>/" target="_blank">IMDb</a></span></div>
+						</div>
 					</div>
-					<div class="info">
-						<div class="title"><%= movie["Title"]  %></div>
-						<div class="other"><p><%= movie["Type"] %> &middot; <%= movie["Year"]%></p><span class="imdb"><a href="http://www.imdb.com/title/<%= movie["imdbID"]%>/" target="_blank">IMDb</a></span></div>
-					</div>
-				</div>
-		     <% }) %>
+			     <% }) %>
+			   <% } %> 
 			</div>
 		</div>
 		
