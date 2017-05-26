@@ -1,8 +1,10 @@
+
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Results</title>
-		<meta name="theme-color" content="#75222c">
+		<meta name="theme-color" content="#b73030">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="/css/app.css">
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,24 +27,30 @@
 	
 		<div class="container">
 		    <div class="container-results">
-		    <% if (data["Response"] === "False" ) { %>
+		    <% if (data["results"].length < 1 ) { %>
 		    <div class="noResultsFound">
 		    	<h1><i class="fa fa-exclamation-circle"></i> No Results Found</h1>
 		    	<h3> <%= data["Error"] %></h3>
 		    </div>
 		    <% } else { %>
-			    <% data["Search"].forEach(function(movie){ %>
+			    <% data["results"].forEach(function(movie){ %>
 					<div class="card">
 						<div class="thumbnail">
-						    <% var image = movie["Poster"] %>
-						    <% if (movie["Poster"] == "N/A") {  %>
+						    <% var image = "https://image.tmdb.org/t/p/w500/" + movie["poster_path"] %>
+						    <% if (!movie["poster_path"]) {  %>
 						    <% image = "assets/images/noposter.png";%>
 						    <% }  %>
 							<img src="<%= image %>">
 						</div>
 						<div class="info">
-							<div class="title"><%= movie["Title"]  %></div>
-							<div class="other"><p><%= movie["Type"] %> &middot; <%= movie["Year"]%></p><span class="imdb"><a href="http://www.imdb.com/title/<%= movie["imdbID"]%>/" target="_blank">IMDb</a></span></div>
+							<div class="title"><%= movie["title"]  %></div>
+							 
+							<div class="other">
+								<% if (movie["vote_average"] !== 0 ) { %>
+								<p><%= movie["vote_average"] %> </p>
+							 	<% } %>
+								<span class="otherRight"><%= movie["release_date"].substring(0,4)%></span>
+							</div>
 						</div>
 					</div>
 			     <% }) %>
@@ -51,7 +59,7 @@
 		</div>
 		
 		<footer>
-	  		<div><p>Powered by OMDb API</p></div>
+	  		<div><p>Powered by TMDb API</p></div>
 			<p>Made with <i class="fa fa-heart" aria-hidden="true"></i> by Nikola Antić <span>&middot;</span></p>
 			<p><a href="https://github.com/nikantic/cinemaflix" target="_blank"><i class="fa fa-github" aria-hidden="true" ></i> GitHub </a><span>&middot;</span></p>
 	  		<p><a href="#">About</a></p>

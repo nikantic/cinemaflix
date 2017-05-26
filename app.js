@@ -4,6 +4,7 @@ var express = require("express"),
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+var api_key = process.env.API_KEY;
 
 // ROUTES
 
@@ -15,7 +16,7 @@ app.get("/", function(req, res){
 // Results route
 app.get("/results", function(req, res){
     var query = req.query.search;
-    var url = "http://www.omdbapi.com/?s=" + query;
+    var url = "https://api.themoviedb.org/3/search/movie?api_key=" + api_key + "&query=" + query;
     request(url, function(error, response, body){
         if(!error && response.statusCode == 200) {
             var data = JSON.parse(body);
