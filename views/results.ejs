@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,10 +12,12 @@
 	<body>
 		
 		<header>
-			<div id="logo">
-				<h1>Cinemaflix</h1>
-				<h3>Your next movie search starts here</h3>
-			</div>
+			<a href="/">
+				<div id="logo">
+					<h1>Cinemaflix</h1>
+					<h3>Your next movie search starts here</h3>
+				</div>
+			</a>
 		</header>
 	
 		<div class="container" id="searchInfo">
@@ -44,12 +44,17 @@
 						</div>
 						<div class="info">
 							<div class="title"><%= movie["title"]  %></div>
-							 
 							<div class="other">
 								<% if (movie["vote_average"] !== 0 ) { %>
 								<p><%= movie["vote_average"] %> </p>
+							 	<% } else { %>
+							 	<p>N/A</p>
 							 	<% } %>
+							 	<% if (movie["release_date"] !== "" ) { %>
 								<span class="otherRight"><%= movie["release_date"].substring(0,4)%></span>
+							 	<% } else { %>
+							 	<span class="otherRight">N/A</span>
+							 	<% } %>
 							</div>
 						</div>
 					</div>
