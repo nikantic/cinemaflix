@@ -4,7 +4,7 @@ A movie search web app called Cinemaflix. Check it out [here!](https://cinemafli
 
 ## Overview
 
-The idea was to build a nice looking web application to search for movies, show the results and display as much information as possible (such as the year of release, poster images, etc.) provided by the API. The website is fully responsive and features a minimalistic design I handcrafted myself.
+The idea was to build a nice looking web application to search for movies, show the results and display as much information as possible (such as the year of release, poster images, movie ratings, etc.) provided by the API. The website is fully responsive.
 
 ## Built with
 
@@ -16,8 +16,3 @@ The idea was to build a nice looking web application to search for movies, show 
 - HTML
 - CSS
 - JavaScript
-
-## Future updates
-
-- [ ] Make a separate show page with much more information about selected movie
-
